@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 2</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="parentul">
+        <li><span>js</span></li>
+    </ul>
+</body>
+<script>
+    
+    function addli(lang) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(lang))
+        document.querySelector('.parentul').appendChild(li)
+    }
+    addli("java")
+    addli("python")
+    // edit language 
+    const seclang = document.querySelector("li:nth-child(1)")
+    seclang.textContent = "changed"
+    const newli = document.createElement('li')
+    newli.textContent = "rust"
+    seclang.replaceWith(newli)
+    // remove
+    // const removelast = document.querySelector('li:last-child')
+    // removelast.remove();
+</script>
+</html>
